@@ -44,7 +44,7 @@ int main() {
 
     printf("Enter the number of students: ");
     scanf("%d", &n);
-    getchar(); // Clear the newline character from the input buffer
+    getchar();
 
     struct Student *students = (struct Student *)malloc(n * sizeof(struct Student));
 
@@ -58,7 +58,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         fgets(input, sizeof(input), stdin);
-        input[strcspn(input, "\n")] = '\0'; // Remove trailing newline character
+        input[strcspn(input, "\n")] = '\0';
 
         initializeArray(&students[i], 1, input);
     }
